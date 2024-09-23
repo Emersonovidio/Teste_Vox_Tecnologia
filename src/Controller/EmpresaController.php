@@ -81,14 +81,14 @@ class EmpresaController extends AbstractController
         $empresa = $empresaRepository->find($id);
 
         if (!$empresa) {
-            return $this->json('Nenhum socio encontrado', 404);
+            return $this->json('Nenhuma Empresa encontrada', 404);
         }
 
         $entityManager->remove($empresa);
         $entityManager->flush();
 
         return $this->json([
-            'message' => 'Empresa deletado com sucesso!'
+            'message' => 'Empresa deletada com sucesso!'
         ], 201);
     }
 }
