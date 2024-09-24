@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class EmpresaController extends AbstractController
 {
 
-    #[Route('/empresas', name: 'empresa_index', methods: ['GET'])]
+    #[Route('/empresas', name: 'empresa_index', methods: 'GET')]
     public function index(EmpresaRepository $empresaRepository): JsonResponse
     {
         $empresas = $empresaRepository->findAll();
@@ -27,7 +27,7 @@ class EmpresaController extends AbstractController
     {
         $empresa = $empresaRepository->find($id);
 
-        return $this->$empresa;
+        return $this->json($empresa);
     }
 
     #[Route('/empresas', name: 'empresa_create', methods: ['POST'])]

@@ -117,12 +117,4 @@ class Empresa
 
         return $this;
     }
-
-    /**
-     * @return Collection<int, Socio>
-     */
-    public function getSocios(): Collection
-    {
-        return $this->socios;
-    }
 }
